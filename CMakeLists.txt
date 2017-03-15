@@ -156,8 +156,8 @@ set_property(GLOBAL PROPERTY OS_FOLDERS ON)
 #    files as an example.
 # D. Comment in these lines:
 #
-set(CEF_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/cef")
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CEF_ROOT}/cmake")
+#set(CEF_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/cef")
+#set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CEF_ROOT}/cmake")
 
 # Example 3: The binary distribution is in a separate directory from your
 #            project. Locate the binary distribution using the CEF_ROOT
@@ -188,7 +188,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CEF_ROOT}/cmake")
 #
 
 # Execute FindCEF.cmake which must exist in CMAKE_MODULE_PATH.
-find_package(CEF REQUIRED)
+#find_package(CEF REQUIRED)
 
 
 #
@@ -198,7 +198,7 @@ find_package(CEF REQUIRED)
 # Include the libcef_dll_wrapper target.
 # Comes from the libcef_dll/CMakeLists.txt file in the binary distribution
 # directory.
-add_subdirectory(${CEF_LIBCEF_DLL_WRAPPER_PATH} libcef_dll_wrapper)
+#add_subdirectory(${CEF_LIBCEF_DLL_WRAPPER_PATH} libcef_dll_wrapper)
 
 include_directories("asio")
 add_definitions(-DASIO_STANDALONE -DASIO_NO_TYPEID)
@@ -211,4 +211,4 @@ add_definitions(-DASIO_STANDALONE -DASIO_NO_TYPEID)
 add_subdirectory(src)
 
 # Display configuration settings.
-PRINT_CEF_CONFIG()
+#PRINT_CEF_CONFIG()
