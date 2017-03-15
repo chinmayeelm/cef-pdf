@@ -44,7 +44,14 @@ In addition to POSTing content inside the request body, special HTTP header `Con
 
 ### Building
 
-In order to build, [CEF build distribution files](http://opensource.spotify.com/cefbuilds/index.html) must be placed in cef/ subdirectory. `cef-pdf` should compile without problems with cmake/ninja on Windows 7+ and Linux (tested on Debian 8.5.0 x64), using decent C++11 compiler. Mac OS X needs some work (contributors welcome).
+1. Get CEF binary from https://cefbuilds.com/ extract to $CEF_bin_folder
+1. git clone this repo in $CEF_bin_folder / download source zip, extract into cep-pdf folder
+1. Add line "add_subdirectory(cef-pdf)" to CmakeLists.txt in $CEF_bin_folder
+1. Add director "build" in $CEF_bin_folder
+1. ```cmake -G "Ninja" -DCMAKE_BUILD_TYPE=Release ..``` in this build folder
+1. ```ninja``` OR ```ninja cef-pdf``` in build to compile only cef-pdf and not cefsimple and cefclient
+
+Tested in Ubuntu 16.04 with cef 3.2785.1440.g1ee311f
 
 ### TODO
 
